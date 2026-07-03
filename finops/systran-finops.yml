@@ -1,0 +1,102 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: SYSTRAN
+providerId: systran
+created: '2026-07-03'
+modified: '2026-07-03'
+reconciled: false
+tags:
+- Machine Translation
+- Translation
+- NLP
+- Localization
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of SYSTRAN spend. SYSTRAN Translate is billed primarily on
+  characters translated. Developers start with a 14-day free trial including
+  500,000 characters, then pay per character with no volume restrictions on the
+  Cloud API. Professional is a seat-based SaaS subscription and Enterprise covers
+  Cloud and on-premise deployments under negotiated agreements. The dominant cost
+  driver for programmatic use is translated character volume across text, HTML,
+  and file translation; NLP, dictionary, corpus, and profile management operations
+  support that volume. On-premise / Pure Neural Server deployments trade
+  per-character fees for licensed infrastructure.
+notes: >-
+  Per-character list rates and marketplace subscription tiers are not reconciled
+  here; verify on the SYSTRAN store and Translate API product page. Track character
+  consumption per profile/language pair to allocate cost, and prefer batching and
+  translation memory (corpora) to avoid re-translating repeated content.
+sources:
+- https://www.systransoft.com/translation-products/translate-api/
+- https://docs.systran.net/translateAPI/en/
+- https://www.systran.net
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: SYSTRAN
+serviceCategory: Machine Learning and AI
+billingModel:
+  pricingCategory: Usage-Based
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+  - Usage
+  - Purchase
+  - Adjustment
+focusColumns:
+  ServiceName: SYSTRAN Translate API
+  ServiceCategory: Machine Learning and AI
+  ProviderName: SYSTRAN
+  PublisherName: SYSTRAN
+  InvoiceIssuerName: SYSTRAN
+  BillingCurrency: USD
+  ChargeCategory: Usage
+  PricingCategory: Usage-Based
+meters:
+- name: characters_translated
+  description: Characters translated across text, HTML, and file translation, the primary billing meter.
+  unit: characters
+  aggregation: sum
+  dimensions:
+  - account
+  - profile
+  - language_pair
+- name: file_jobs
+  description: Asynchronous file translation jobs submitted and processed.
+  unit: jobs
+  aggregation: sum
+  dimensions:
+  - account
+  - profile
+- name: nlp_requests
+  description: NLP and language-detection calls (morphology, tokenization, segmentation, NER, LID) on the Platform surface.
+  unit: requests
+  aggregation: sum
+  dimensions:
+  - account
+  - operation
+- name: seat_subscriptions
+  description: Professional SaaS seats subscribed on a monthly/annual basis.
+  unit: seats
+  aggregation: max
+  dimensions:
+  - account
+principles:
+- name: Visibility
+  description: Track characters translated per profile and language pair, plus file-job and NLP request volumes, against the plan's character allowance.
+- name: Allocation
+  description: Name profiles per workload/team so translated-character cost maps to internal cost centers.
+- name: Optimization
+  description: Use translation-memory corpora and user dictionaries to avoid re-translating repeated content, batch file jobs, and consider on-premise deployment when volume is very high.
+- name: Accountability
+  description: Assign owners per profile and review monthly character consumption against subscription allowances and trial limits.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

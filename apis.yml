@@ -1,0 +1,201 @@
+aid: systran
+url: https://raw.githubusercontent.com/api-evangelist/systran/refs/heads/main/apis.yml
+name: SYSTRAN
+kind: company
+description: SYSTRAN is a machine translation and natural language processing company
+  offering neural (Pure Neural Machine Translation / PNMT) translation across 50+
+  languages. The SYSTRAN Translate API is a RESTful service (base
+  https://api-translate.systran.net) that translates text, files, and HTML,
+  detects and lists supported languages, and manages translation profiles, user
+  dictionaries, and corpora. The broader SYSTRAN Platform / SYSTRAN.io surface adds
+  NLP operations - morphology, tokenization, segmentation, named entity
+  recognition, and language identification. Requests authenticate with an API key
+  (key query parameter or Authorization header). SYSTRAN sells access as a
+  Developer cloud subscription (14-day / 500,000-character free trial) plus
+  Professional SaaS and Enterprise cloud/on-premise plans, billed per character.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Machine Translation
+- Translation
+- NLP
+- Neural Machine Translation
+- Localization
+- Language Detection
+created: '2026-07-03'
+modified: '2026-07-03'
+specificationVersion: '0.19'
+apis:
+- aid: systran:systran-translation-api
+  name: SYSTRAN Translation API
+  tags:
+  - Translation
+  - Text
+  - HTML
+  - Neural Machine Translation
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.systran.net/translateAPI/translation/
+  baseURL: https://api-translate.systran.net
+  properties:
+  - url: https://docs.systran.net/translateAPI/en/
+    type: Documentation
+  - url: https://docs.systran.net/translateAPI/translation/
+    type: APIReference
+  - url: openapi/systran-openapi.yml
+    type: OpenAPI
+  - url: collections/systran.postman_collection.json
+    type: PostmanCollection
+  - url: collections/systran.opencollection.json
+    type: OpenCollection
+  description: Translate text and inline HTML from a source language to a target
+    language with SYSTRAN Pure Neural Machine Translation. Supports profile
+    selection, format handling, and translation feedback via
+    POST /translation/text/translate and the supportedFormats / supportedSelectors
+    / apiVersion utility endpoints.
+- aid: systran:systran-file-translation-api
+  name: SYSTRAN File Translation API
+  tags:
+  - File Translation
+  - Async
+  - Batch
+  - Documents
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.systran.net/translateAPI/translation/
+  baseURL: https://api-translate.systran.net
+  properties:
+  - url: https://docs.systran.net/translateAPI/translation/
+    type: APIReference
+  - url: openapi/systran-openapi.yml
+    type: OpenAPI
+  - url: collections/systran.postman_collection.json
+    type: PostmanCollection
+  description: Submit documents for asynchronous translation and manage translation
+    jobs and batches - POST /translation/file/translate (with async=true), poll
+    GET /translation/file/status by requestId, retrieve GET /translation/file/result,
+    and create/close/cancel batches under /translation/file/batch.
+- aid: systran:systran-supported-languages-api
+  name: SYSTRAN Supported Languages API
+  tags:
+  - Supported Languages
+  - Language Pairs
+  - Features
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.systran.net/translateAPI/translation/
+  baseURL: https://api-translate.systran.net
+  properties:
+  - url: https://docs.systran.net/translateAPI/translation/
+    type: APIReference
+  - url: openapi/systran-openapi.yml
+    type: OpenAPI
+  description: Discover which language pairs, model options, formats, and selectors
+    (domains, owners, sizes) are available - GET /translation/supportedLanguages,
+    GET /translation/supportedFeatures, GET /translation/supportedFormats, and
+    GET /translation/supportedSelectors.
+- aid: systran:systran-language-detection-api
+  name: SYSTRAN Language Detection API
+  tags:
+  - Language Detection
+  - Language Identification
+  - LID
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
+  baseURL: https://api-platform.systran.net
+  properties:
+  - url: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
+    type: Documentation
+  - url: openapi/systran-openapi.yml
+    type: OpenAPI
+  description: Automatically identify the language of a piece of text through the
+    SYSTRAN.io / Platform NLP language-identification service
+    (GET /nlp/lid/detectLanguage) and list the languages it can recognize
+    (GET /nlp/lid/supportedLanguages).
+- aid: systran:systran-nlp-api
+  name: SYSTRAN NLP API
+  tags:
+  - NLP
+  - Morphology
+  - Tokenization
+  - Named Entity Recognition
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
+  baseURL: https://api-platform.systran.net
+  properties:
+  - url: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
+    type: Documentation
+  - url: openapi/systran-openapi.yml
+    type: OpenAPI
+  description: Natural language processing over the SYSTRAN.io / Platform NLP
+    surface - morphological analysis (GET /nlp/morphology/extractRoots),
+    tokenization (GET /nlp/tokenization/tokenize), segmentation
+    (GET /nlp/segmentation/segment), and named entity recognition
+    (GET /nlp/ner/extractNamedEntities).
+- aid: systran:systran-dictionary-api
+  name: SYSTRAN Dictionary API
+  tags:
+  - Dictionary
+  - Lookup
+  - Terminology
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.systran.net/translateAPI/dictionary/
+  baseURL: https://api-translate.systran.net
+  properties:
+  - url: https://docs.systran.net/translateAPI/dictionary/
+    type: APIReference
+  - url: openapi/systran-openapi.yml
+    type: OpenAPI
+  description: Look up multilingual dictionary entries and manage user dictionaries
+    and their entries - GET /resources/dictionary/lookup plus create, update,
+    delete, list, import, export, and apply operations under /resources/dictionary.
+- aid: systran:systran-profiles-api
+  name: SYSTRAN Profiles API
+  tags:
+  - Profiles
+  - Translation Resources
+  - Permissions
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.systran.net/translateAPI/profiles/
+  baseURL: https://api-translate.systran.net
+  properties:
+  - url: https://docs.systran.net/translateAPI/profiles/
+    type: APIReference
+  - url: openapi/systran-openapi.yml
+    type: OpenAPI
+  description: Create and manage translation profiles that bundle a language pair
+    with dictionaries, corpora, and model options, and control their permissions -
+    GET /profiles, POST /profiles/create, activate/deactivate/delete, and
+    GET/POST /profiles/{id}/permissions, plus GET /translationResources.
+- aid: systran:systran-corpus-api
+  name: SYSTRAN Corpus API
+  tags:
+  - Corpus
+  - Translation Memory
+  - Segments
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.systran.net/translateAPI/corpus/
+  baseURL: https://api-translate.systran.net
+  properties:
+  - url: https://docs.systran.net/translateAPI/corpus/
+    type: APIReference
+  - url: openapi/systran-openapi.yml
+    type: OpenAPI
+  description: Manage translation-memory corpora and their bilingual segments -
+    add, import, list, export, match, update, and delete corpora under
+    /resources/corpus, plus segment and segment-target CRUD used to adapt and
+    tune translation output.
+common:
+- type: GitHubOrganization
+  url: https://github.com/SYSTRAN
+- type: LinkedIn
+  url: https://www.linkedin.com/company/systran
+- type: Website
+  url: https://www.systran.net
+- type: Documentation
+  url: https://docs.systran.net/translateAPI/en/
+- type: Plans
+  url: plans/systran-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/systran-rate-limits.yml
+- type: FinOps
+  url: finops/systran-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

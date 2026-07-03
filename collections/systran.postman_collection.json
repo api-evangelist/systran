@@ -1,0 +1,329 @@
+{
+  "info": {
+    "name": "SYSTRAN Translate & NLP API",
+    "description": "SYSTRAN machine translation and NLP REST API. Translate API base https://api-translate.systran.net (translation, file, supported languages, dictionary, corpus, profiles); SYSTRAN.io / Platform NLP base https://api-platform.systran.net (language detection, morphology, tokenization, NER). Authenticate with an API key via the `key` query parameter.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      { "key": "key", "value": "key", "type": "string" },
+      { "key": "value", "value": "{{apiKey}}", "type": "string" },
+      { "key": "in", "value": "query", "type": "string" }
+    ]
+  },
+  "variable": [
+    { "key": "translateBaseUrl", "value": "https://api-translate.systran.net" },
+    { "key": "platformBaseUrl", "value": "https://api-platform.systran.net" },
+    { "key": "apiKey", "value": "" },
+    { "key": "requestId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Translation",
+      "item": [
+        {
+          "name": "Translate text",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{translateBaseUrl}}/translation/text/translate?source=en&target=fr&input=Hello world",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["translation", "text", "translate"],
+              "query": [
+                { "key": "source", "value": "en" },
+                { "key": "target", "value": "fr" },
+                { "key": "input", "value": "Hello world" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Translation API version",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{translateBaseUrl}}/translation/apiVersion",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["translation", "apiVersion"]
+            }
+          }
+        },
+        {
+          "name": "Submit translation feedback",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{}" },
+            "url": {
+              "raw": "{{translateBaseUrl}}/translation/feedback/add",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["translation", "feedback", "add"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "File Translation",
+      "item": [
+        {
+          "name": "Translate a file",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": { "mode": "formdata", "formdata": [{ "key": "input", "type": "file", "src": [] }] },
+            "url": {
+              "raw": "{{translateBaseUrl}}/translation/file/translate?target=fr&async=true",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["translation", "file", "translate"],
+              "query": [
+                { "key": "target", "value": "fr" },
+                { "key": "async", "value": "true" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get file translation status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{translateBaseUrl}}/translation/file/status?requestId={{requestId}}",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["translation", "file", "status"],
+              "query": [{ "key": "requestId", "value": "{{requestId}}" }]
+            }
+          }
+        },
+        {
+          "name": "Get file translation result",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{translateBaseUrl}}/translation/file/result?requestId={{requestId}}",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["translation", "file", "result"],
+              "query": [{ "key": "requestId", "value": "{{requestId}}" }]
+            }
+          }
+        },
+        {
+          "name": "Create translation batch",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{}" },
+            "url": {
+              "raw": "{{translateBaseUrl}}/translation/file/batch/create",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["translation", "file", "batch", "create"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Supported Languages",
+      "item": [
+        {
+          "name": "List supported languages",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{translateBaseUrl}}/translation/supportedLanguages",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["translation", "supportedLanguages"]
+            }
+          }
+        },
+        {
+          "name": "List supported features",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{translateBaseUrl}}/translation/supportedFeatures",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["translation", "supportedFeatures"]
+            }
+          }
+        },
+        {
+          "name": "List supported formats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{translateBaseUrl}}/translation/supportedFormats",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["translation", "supportedFormats"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Language Detection",
+      "item": [
+        {
+          "name": "Detect language",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{platformBaseUrl}}/nlp/lid/detectLanguage?input=Bonjour le monde",
+              "host": ["{{platformBaseUrl}}"],
+              "path": ["nlp", "lid", "detectLanguage"],
+              "query": [{ "key": "input", "value": "Bonjour le monde" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "NLP",
+      "item": [
+        {
+          "name": "Extract roots",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{platformBaseUrl}}/nlp/morphology/extractRoots?input=running",
+              "host": ["{{platformBaseUrl}}"],
+              "path": ["nlp", "morphology", "extractRoots"],
+              "query": [{ "key": "input", "value": "running" }]
+            }
+          }
+        },
+        {
+          "name": "Tokenize",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{platformBaseUrl}}/nlp/tokenization/tokenize?input=Hello world",
+              "host": ["{{platformBaseUrl}}"],
+              "path": ["nlp", "tokenization", "tokenize"],
+              "query": [{ "key": "input", "value": "Hello world" }]
+            }
+          }
+        },
+        {
+          "name": "Extract named entities",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{platformBaseUrl}}/nlp/ner/extractNamedEntities?input=SYSTRAN is based in Paris",
+              "host": ["{{platformBaseUrl}}"],
+              "path": ["nlp", "ner", "extractNamedEntities"],
+              "query": [{ "key": "input", "value": "SYSTRAN is based in Paris" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dictionary",
+      "item": [
+        {
+          "name": "Dictionary lookup",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{translateBaseUrl}}/resources/dictionary/lookup?source=en&target=fr&input=translation",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["resources", "dictionary", "lookup"],
+              "query": [
+                { "key": "source", "value": "en" },
+                { "key": "target", "value": "fr" },
+                { "key": "input", "value": "translation" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "List dictionaries",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{}" },
+            "url": {
+              "raw": "{{translateBaseUrl}}/resources/dictionary/list",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["resources", "dictionary", "list"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Profiles",
+      "item": [
+        {
+          "name": "List profiles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{translateBaseUrl}}/profiles",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["profiles"]
+            }
+          }
+        },
+        {
+          "name": "Create profile",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{}" },
+            "url": {
+              "raw": "{{translateBaseUrl}}/profiles/create",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["profiles", "create"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Corpus",
+      "item": [
+        {
+          "name": "List corpora",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{translateBaseUrl}}/resources/corpus/list",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["resources", "corpus", "list"]
+            }
+          }
+        },
+        {
+          "name": "Add corpus",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{}" },
+            "url": {
+              "raw": "{{translateBaseUrl}}/resources/corpus/add",
+              "host": ["{{translateBaseUrl}}"],
+              "path": ["resources", "corpus", "add"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

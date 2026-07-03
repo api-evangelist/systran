@@ -1,0 +1,414 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SYSTRAN Translate & NLP API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{apiKey}}",
+      "in": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Translation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Translate text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/translation/text/translate",
+            "params": [
+              {
+                "name": "source",
+                "value": "en",
+                "type": "query"
+              },
+              {
+                "name": "target",
+                "value": "fr",
+                "type": "query"
+              },
+              {
+                "name": "input",
+                "value": "Hello world",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Translate text from a source to a target language."
+        },
+        {
+          "info": {
+            "name": "Get Translation API version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/apiVersion"
+          },
+          "docs": "Retrieve the current Translation API version."
+        },
+        {
+          "info": {
+            "name": "Submit translation feedback",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/translation/feedback/add",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit feedback on a translation."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "File Translation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Translate a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/translation/file/translate",
+            "params": [
+              {
+                "name": "target",
+                "value": "fr",
+                "type": "query"
+              },
+              {
+                "name": "async",
+                "value": "true",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            }
+          },
+          "docs": "Submit a document for translation; set async=true for asynchronous jobs."
+        },
+        {
+          "info": {
+            "name": "Get file translation status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/file/status",
+            "params": [
+              {
+                "name": "requestId",
+                "value": "{{requestId}}",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Poll async file translation status by requestId."
+        },
+        {
+          "info": {
+            "name": "Get file translation result",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/file/result",
+            "params": [
+              {
+                "name": "requestId",
+                "value": "{{requestId}}",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve the translated file for a finished async job."
+        },
+        {
+          "info": {
+            "name": "Create translation batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/translation/file/batch/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a batch to group multiple file translation requests."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Supported Languages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List supported languages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/supportedLanguages"
+          },
+          "docs": "List available language pairs for translation."
+        },
+        {
+          "info": {
+            "name": "List supported features",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/supportedFeatures"
+          },
+          "docs": "List available model options by language pair."
+        },
+        {
+          "info": {
+            "name": "List supported formats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/supportedFormats"
+          },
+          "docs": "List supported input/output formats."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Language Detection",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Detect language",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-platform.systran.net/nlp/lid/detectLanguage",
+            "params": [
+              {
+                "name": "input",
+                "value": "Bonjour le monde",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Detect the language of a text (modeled from the SYSTRAN.io / Platform NLP surface)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "NLP",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Extract roots",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-platform.systran.net/nlp/morphology/extractRoots",
+            "params": [
+              {
+                "name": "input",
+                "value": "running",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Morphological analysis (modeled)."
+        },
+        {
+          "info": {
+            "name": "Tokenize",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-platform.systran.net/nlp/tokenization/tokenize",
+            "params": [
+              {
+                "name": "input",
+                "value": "Hello world",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Tokenize text (modeled)."
+        },
+        {
+          "info": {
+            "name": "Extract named entities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-platform.systran.net/nlp/ner/extractNamedEntities",
+            "params": [
+              {
+                "name": "input",
+                "value": "SYSTRAN is based in Paris",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Named entity recognition (modeled)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Dictionary",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Dictionary lookup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/resources/dictionary/lookup",
+            "params": [
+              {
+                "name": "source",
+                "value": "en",
+                "type": "query"
+              },
+              {
+                "name": "target",
+                "value": "fr",
+                "type": "query"
+              },
+              {
+                "name": "input",
+                "value": "translation",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Look up multilingual dictionary entries."
+        },
+        {
+          "info": {
+            "name": "List dictionaries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/dictionary/list",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "List the user's dictionaries."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Profiles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List profiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/profiles"
+          },
+          "docs": "List translation profiles."
+        },
+        {
+          "info": {
+            "name": "Create profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/profiles/create",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a translation profile."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Corpus",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List corpora",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/resources/corpus/list"
+          },
+          "docs": "List translation-memory corpora."
+        },
+        {
+          "info": {
+            "name": "Add corpus",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/corpus/add",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a corpus."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

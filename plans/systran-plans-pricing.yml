@@ -1,0 +1,125 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: SYSTRAN
+providerId: systran
+created: '2026-07-03'
+modified: '2026-07-03'
+reconciled: false
+tags:
+- Machine Translation
+- Translation
+- NLP
+- Localization
+- Plans
+description: >-
+  SYSTRAN sells access to its neural translation technology across three go-to-market
+  tiers. Developers get a self-service Cloud API subscription with a 14-day free
+  trial that includes 500,000 characters, then pay per character (no volume
+  restrictions) as they scale. Professional is an online SaaS subscription for
+  business users of SYSTRAN Translate. Enterprise covers Public Cloud, Private
+  Cloud, and On-premise deployments (SYSTRAN Server / Pure Neural Server) with
+  negotiated terms. Usage is metered primarily on characters translated. Exact
+  per-character rates are set on the SYSTRAN store/marketplace and are not
+  reconciled here.
+notes: >-
+  The 500,000-character / 14-day free trial is the documented entry point. Per-character
+  list prices and marketplace subscription tiers vary; verify current rates on the
+  SYSTRAN store and the Translate API product page during reconciliation. The API is
+  granted for API and INFINITE subscriptions per the docs.
+sources:
+- https://www.systransoft.com/translation-products/translate-api/
+- https://docs.systran.net/translateAPI/en/
+- https://www.systran.net
+plans:
+- id: systran-free-trial
+  name: Developer Free Trial
+  type: free
+  description: >-
+    14-day free trial of the SYSTRAN Translate Cloud API including 500,000
+    characters, for evaluating text, file, and HTML translation before subscribing.
+  entries:
+  - label: Included Characters
+    name: trial_characters
+    type: usage
+    metric: characters
+    limit: 500000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: free for 14 days (500,000 characters included)
+    userMultiplied: false
+  elements:
+  - name: Text Translation
+  - name: File Translation
+  - name: Supported Languages
+  - name: User Dictionaries
+- id: systran-developer
+  name: Developer (Cloud API)
+  type: usage
+  description: >-
+    Self-service Cloud API subscription for integrating SYSTRAN translation into
+    third-party applications, billed per character with no volume restrictions.
+  entries:
+  - label: Characters Translated
+    name: developer_characters
+    type: usage
+    metric: characters
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1000000
+    price: per-character (see SYSTRAN store; competitive high-volume rates)
+    userMultiplied: false
+  elements:
+  - name: Translate API Access
+  - name: Profiles and Dictionaries
+  - name: Corpus / Translation Memory
+  - name: NLP and Language Detection
+- id: systran-professional
+  name: Professional (SaaS)
+  type: subscription
+  description: >-
+    Online SaaS subscription to SYSTRAN Translate for business users, with a
+    monthly/annual seat-based plan and access to the translation web app and API.
+  entries:
+  - label: Professional Subscription
+    name: professional_subscription
+    type: flat
+    metric: seat
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: subscription (see SYSTRAN store)
+    userMultiplied: true
+  elements:
+  - name: SYSTRAN Translate SaaS
+  - name: API Access
+  - name: Business Support
+- id: systran-enterprise
+  name: Enterprise (Cloud / On-Premise)
+  type: enterprise
+  description: >-
+    Enterprise deployments of SYSTRAN across Public Cloud, Private Cloud, and
+    On-premise (SYSTRAN Server / Pure Neural Server), with data privacy, custom
+    models, SLAs, and negotiated terms. Contact SYSTRAN sales.
+  entries:
+  - label: Enterprise Agreement
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Public / Private Cloud
+  - name: On-Premise Deployment
+  - name: Custom Models and Data Privacy
+  - name: SLAs and Support
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

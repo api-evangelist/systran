@@ -1,0 +1,146 @@
+aid: systran
+name: SYSTRAN
+review:
+  question: Does SYSTRAN expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-03'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. SYSTRAN's public API surface - the
+    Translate API (https://api-translate.systran.net) and the SYSTRAN.io /
+    Platform NLP surface (https://api-platform.systran.net) - is entirely
+    request/response REST over HTTPS. There is no documented server-push
+    transport (WebSocket or SSE) on SYSTRAN's own API to model. Long-running
+    document translation is handled by an asynchronous submit-then-poll REST
+    pattern (async=true, then GET /translation/file/status by requestId), not
+    by a streaming socket.
+findings:
+  summary: |
+    SYSTRAN does not publish a documented public WebSocket API. SYSTRAN is a
+    machine translation and NLP provider. Its public developer surface is the
+    RESTful SYSTRAN Translate API at https://api-translate.systran.net (text,
+    HTML, and file translation, supported-language discovery, dictionaries,
+    corpora, and profiles) plus the SYSTRAN.io / Platform NLP surface at
+    https://api-platform.systran.net (language detection, morphology,
+    tokenization, segmentation, named entity recognition). All operations are
+    request/response REST over HTTPS, authenticated with an API key passed as
+    the `key` query parameter or an Authorization header. Asynchronous file
+    translation uses async=true followed by polling GET /translation/file/status
+    by requestId until finished, then GET /translation/file/result - a REST poll
+    loop, not a WebSocket. No realtime, bidirectional, or streaming WebSocket
+    (ws:// or wss://) endpoint is documented on SYSTRAN's public API.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api-translate.systran.net
+      documented: true
+      note: SYSTRAN Translate API - translation, file, supported languages, dictionary, corpus, profiles. Request/response only.
+    - protocol: REST
+      scheme: https
+      baseURL: https://api-platform.systran.net
+      documented: true
+      note: SYSTRAN.io / Platform NLP surface - language detection and NLP operations. Request/response only.
+    - protocol: HTTP Poll
+      scheme: https
+      documented: true
+      note: Async file translation submitted with async=true and polled via GET /translation/file/status by requestId. Client-initiated polling, not server push.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in the SYSTRAN Translate API reference or the Platform/SYSTRAN.io NLP documentation as of the review date.
+  endpointsConfirmedRest:
+    - POST https://api-translate.systran.net/translation/text/translate
+    - GET  https://api-translate.systran.net/translation/apiVersion
+    - GET  https://api-translate.systran.net/translation/supportedLanguages
+    - GET  https://api-translate.systran.net/translation/supportedFeatures
+    - GET  https://api-translate.systran.net/translation/supportedFormats
+    - GET  https://api-translate.systran.net/translation/supportedSelectors
+    - GET  https://api-translate.systran.net/translation/profiles
+    - POST https://api-translate.systran.net/translation/feedback/add
+    - POST https://api-translate.systran.net/translation/file/translate
+    - GET  https://api-translate.systran.net/translation/file/status
+    - GET  https://api-translate.systran.net/translation/file/result
+    - POST https://api-translate.systran.net/translation/file/cancel
+    - POST https://api-translate.systran.net/translation/file/batch/create
+    - GET  https://api-translate.systran.net/translation/file/batch/status
+    - POST https://api-translate.systran.net/translation/file/batch/close
+    - POST https://api-translate.systran.net/translation/file/batch/cancel
+    - GET  https://api-translate.systran.net/resources/dictionary/lookup
+    - GET  https://api-translate.systran.net/resources/dictionary/lookup/supportedLanguages
+    - GET  https://api-translate.systran.net/resources/dictionary/supportedLanguages
+    - POST https://api-translate.systran.net/resources/dictionary/list
+    - POST https://api-translate.systran.net/resources/dictionary/add
+    - POST https://api-translate.systran.net/resources/dictionary/update
+    - POST https://api-translate.systran.net/resources/dictionary/delete
+    - POST https://api-translate.systran.net/resources/dictionary/export
+    - POST https://api-translate.systran.net/resources/dictionary/apply
+    - POST https://api-translate.systran.net/resources/dictionary/entry/list
+    - POST https://api-translate.systran.net/resources/dictionary/entry/add
+    - POST https://api-translate.systran.net/resources/dictionary/entry/update
+    - POST https://api-translate.systran.net/resources/dictionary/entry/delete
+    - POST https://api-translate.systran.net/resources/dictionary/entry/import
+    - GET  https://api-translate.systran.net/profiles
+    - POST https://api-translate.systran.net/profiles/create
+    - POST https://api-translate.systran.net/profiles/delete
+    - POST https://api-translate.systran.net/profiles/activate
+    - POST https://api-translate.systran.net/profiles/deactivate
+    - GET  https://api-translate.systran.net/profiles/{id}/permissions
+    - POST https://api-translate.systran.net/profiles/{id}/permissions
+    - GET  https://api-translate.systran.net/translationResources
+    - GET  https://api-translate.systran.net/resources/corpus/list
+    - POST https://api-translate.systran.net/resources/corpus/add
+    - POST https://api-translate.systran.net/resources/corpus/import
+    - GET  https://api-translate.systran.net/resources/corpus/details
+    - GET  https://api-translate.systran.net/resources/corpus/match
+    - POST https://api-translate.systran.net/resources/corpus/update
+    - POST https://api-translate.systran.net/resources/corpus/delete
+    - GET  https://api-translate.systran.net/resources/corpus/segment/list
+    - POST https://api-translate.systran.net/resources/corpus/segment/add
+    - POST https://api-translate.systran.net/resources/corpus/segment/update
+    - POST https://api-translate.systran.net/resources/corpus/segment/delete
+  endpointsModeledRest:
+    - GET https://api-platform.systran.net/nlp/lid/detectLanguage
+    - GET https://api-platform.systran.net/nlp/lid/supportedLanguages
+    - GET https://api-platform.systran.net/nlp/morphology/extractRoots
+    - GET https://api-platform.systran.net/nlp/tokenization/tokenize
+    - GET https://api-platform.systran.net/nlp/segmentation/segment
+    - GET https://api-platform.systran.net/nlp/ner/extractNamedEntities
+  modeledNote: |
+    The /nlp/* endpoints are modeled from the historical SYSTRAN.io / Platform
+    NLP service (morphology, tokenization, segmentation, NER, language
+    identification). Their existence as capabilities is documented, but the
+    exact live paths and base host were not re-confirmed against a running
+    reference during this review; treat path spelling as approximate until
+    reconciled against the SYSTRAN Platform embedded documentation.
+sources:
+  - url: https://docs.systran.net/translateAPI/en/
+    type: Documentation
+    note: Translate API overview; base https://api-translate.systran.net; API-key auth; API/INFINITE subscriptions. All REST, no WebSocket.
+  - url: https://docs.systran.net/translateAPI/translation/
+    type: APIReference
+    note: Translation, file translation, batch, and supported-* endpoints. Async file flow is submit + poll, not WebSocket.
+  - url: https://docs.systran.net/translateAPI/dictionary/
+    type: APIReference
+    note: Dictionary lookup and user-dictionary CRUD under /resources/dictionary.
+  - url: https://docs.systran.net/translateAPI/corpus/
+    type: APIReference
+    note: Corpus (translation memory) and segment CRUD under /resources/corpus.
+  - url: https://docs.systran.net/translateAPI/profiles/
+    type: APIReference
+    note: Profile CRUD, permissions, and /translationResources under /profiles.
+  - url: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
+    type: Documentation
+    note: SYSTRAN Server / Platform REST API and embedded documentation; NLP language identification, segmentation, morphology. REST over HTTPS.
+  - url: https://www.systransoft.com/translation-products/translate-api/
+    type: ProductPage
+    note: Developer Cloud API with a 14-day / 500,000-character free trial, per-character billing; Professional and Enterprise plans.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists on SYSTRAN's public API. The Translate
+    API and the Platform/SYSTRAN.io NLP surface are request/response REST over
+    HTTPS, with asynchronous document translation handled by a submit-then-poll
+    REST pattern. No AsyncAPI document was created because there is no
+    server-push transport (WebSocket or SSE) on SYSTRAN's own API to model.

@@ -1,0 +1,65 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: SYSTRAN
+providerId: systran
+created: '2026-07-03'
+modified: '2026-07-03'
+reconciled: false
+tags:
+- Machine Translation
+- Translation
+- NLP
+- Rate Limiting
+- Quotas
+description: >-
+  SYSTRAN does not publish a fixed public per-minute request-rate limit for the
+  Translate API. Practical throughput is governed by the character allowance of
+  your subscription (metered per character, starting with the 500,000-character
+  free trial) rather than by a documented requests-per-second cap. Large or
+  long-running documents are handled through the asynchronous file translation
+  flow (async=true) and batches, which decouple job submission from a per-request
+  size limit. Per-request text size, concurrency, and account-level throughput
+  ceilings are enforced by SYSTRAN but are not published as fixed numeric values.
+notes: >-
+  No numeric per-account or per-endpoint request-rate limits are documented as of
+  the review date. Use asynchronous file translation and batches for large volumes,
+  implement exponential backoff on 429 responses, and confirm any per-plan
+  character allowances and concurrency limits with SYSTRAN during reconciliation.
+sources:
+- https://docs.systran.net/translateAPI/translation/
+- https://docs.systran.net/translateAPI/en/
+- https://www.systransoft.com/translation-products/translate-api/
+responseCodes:
+  throttled: 429
+limits:
+- name: Translate API Requests
+  scope: account
+  metric: requests
+  limit: not published
+  notes: No fixed numeric request-rate limit is documented for the Translate API.
+- name: Character Allowance
+  scope: account
+  metric: characters
+  limit: per subscription (500,000 on the free trial)
+  notes: Usage is metered per character; throughput is bounded by your plan's character allowance.
+- name: Synchronous Text Size
+  scope: request
+  metric: characters
+  limit: bounded per request
+  notes: Very large content should use asynchronous file translation instead of a single synchronous text call.
+- name: Asynchronous File Jobs
+  scope: account
+  metric: jobs
+  limit: managed via batches
+  notes: Large or long-running documents are submitted with async=true and polled by requestId; batches group multiple requests.
+policies:
+- name: Asynchronous Processing
+  description: Submit large documents with async=true and poll /translation/file/status by requestId; group multiple jobs into a batch.
+- name: Backoff Strategy
+  description: Clients should implement exponential backoff with jitter and honor Retry-After on 429 responses.
+- name: Character Metering
+  description: Billing and effective throughput are driven by characters translated rather than a per-second request cap.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
