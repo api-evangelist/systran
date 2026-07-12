@@ -182,6 +182,10 @@ apis:
     /resources/corpus, plus segment and segment-target CRUD used to adapt and
     tune translation output.
 common:
+- type: DomainSecurity
+  url: security/systran-domain-security.yml
+- type: Authentication
+  url: authentication/systran-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/SYSTRAN
 - type: LinkedIn
