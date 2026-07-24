@@ -1,0 +1,134 @@
+openapi: 3.0.3
+info:
+  title: SYSTRAN Translate & NLP Corpus API
+  description: 'RESTful API for SYSTRAN machine translation and natural language processing. The Translate API (server https://api-translate.systran.net) covers text, HTML, and file translation, supported-language discovery, user dictionaries, corpora (translation memory), and translation profiles. The SYSTRAN.io / Platform NLP surface (server https://api-platform.systran.net) adds language detection, morphology, tokenization, segmentation, and named entity recognition. Authenticate with an API key passed as the `key` query parameter or an `Authorization` header.
+
+
+    Endpoint status: paths under /translation, /resources, and /profiles are grounded in the published docs.systran.net Translate API reference (confirmed). Paths under /nlp are modeled from the historical SYSTRAN.io / Platform NLP service and marked with `x-endpoint-status: modeled`.'
+  version: '1.0'
+  contact:
+    name: SYSTRAN
+    url: https://docs.systran.net/translateAPI/en/
+  termsOfService: https://www.systran.net
+servers:
+- url: https://api-translate.systran.net
+  description: SYSTRAN Translate API (translation, dictionary, corpus, profiles)
+- url: https://api-platform.systran.net
+  description: SYSTRAN.io / Platform NLP surface (language detection and NLP)
+security:
+- ApiKeyQuery: []
+- ApiKeyHeader: []
+tags:
+- name: Corpus
+paths:
+  /resources/corpus/list:
+    get:
+      tags:
+      - Corpus
+      operationId: listCorpora
+      summary: List corpora
+      responses:
+        '200':
+          description: Corpora.
+  /resources/corpus/add:
+    post:
+      tags:
+      - Corpus
+      operationId: addCorpus
+      summary: Create a corpus
+      responses:
+        '200':
+          description: Corpus created.
+  /resources/corpus/import:
+    post:
+      tags:
+      - Corpus
+      operationId: importCorpus
+      summary: Import corpus content
+      responses:
+        '200':
+          description: Corpus imported.
+  /resources/corpus/details:
+    get:
+      tags:
+      - Corpus
+      operationId: getCorpusDetails
+      summary: Get corpus details
+      responses:
+        '200':
+          description: Corpus details.
+  /resources/corpus/match:
+    get:
+      tags:
+      - Corpus
+      operationId: matchCorpus
+      summary: Match segments against a corpus
+      responses:
+        '200':
+          description: Matches.
+  /resources/corpus/update:
+    post:
+      tags:
+      - Corpus
+      operationId: updateCorpus
+      summary: Update a corpus
+      responses:
+        '200':
+          description: Corpus updated.
+  /resources/corpus/delete:
+    post:
+      tags:
+      - Corpus
+      operationId: deleteCorpus
+      summary: Delete a corpus
+      responses:
+        '200':
+          description: Corpus deleted.
+  /resources/corpus/segment/list:
+    get:
+      tags:
+      - Corpus
+      operationId: listCorpusSegments
+      summary: List corpus segments
+      responses:
+        '200':
+          description: Segments.
+  /resources/corpus/segment/add:
+    post:
+      tags:
+      - Corpus
+      operationId: addCorpusSegment
+      summary: Add a corpus segment
+      responses:
+        '200':
+          description: Segment added.
+  /resources/corpus/segment/update:
+    post:
+      tags:
+      - Corpus
+      operationId: updateCorpusSegment
+      summary: Update a corpus segment
+      responses:
+        '200':
+          description: Segment updated.
+  /resources/corpus/segment/delete:
+    post:
+      tags:
+      - Corpus
+      operationId: deleteCorpusSegment
+      summary: Delete a corpus segment
+      responses:
+        '200':
+          description: Segment deleted.
+components:
+  securitySchemes:
+    ApiKeyQuery:
+      type: apiKey
+      in: query
+      name: key
+      description: SYSTRAN API key passed as the `key` query parameter.
+    ApiKeyHeader:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'API key passed as an Authorization header, e.g. `Authorization: Key YOUR_API_KEY`.'
