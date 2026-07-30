@@ -13,7 +13,20 @@ description: SYSTRAN is a machine translation and natural language processing co
   (key query parameter or Authorization header). SYSTRAN sells access as a
   Developer cloud subscription (14-day / 500,000-character free trial) plus
   Professional SaaS and Enterprise cloud/on-premise plans, billed per character.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: true
+  try_now: true
+  public: false
+  label: Freemium (free trial) · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/systran.png
 tags:
 - Machine Translation
 - Translation
@@ -25,162 +38,214 @@ created: '2026-07-03'
 modified: '2026-07-03'
 specificationVersion: '0.19'
 apis:
-- aid: systran:systran-translation-api
-  name: SYSTRAN Translation API
-  tags:
-  - Translation
-  - Text
-  - HTML
-  - Neural Machine Translation
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.systran.net/translateAPI/translation/
-  baseURL: https://api-translate.systran.net
-  properties:
-  - url: https://docs.systran.net/translateAPI/en/
-    type: Documentation
-  - url: https://docs.systran.net/translateAPI/translation/
-    type: APIReference
-  - url: openapi/systran-openapi.yml
-    type: OpenAPI
-  - url: collections/systran.postman_collection.json
-    type: PostmanCollection
-  - url: collections/systran.opencollection.json
-    type: OpenCollection
-  description: Translate text and inline HTML from a source language to a target
-    language with SYSTRAN Pure Neural Machine Translation. Supports profile
-    selection, format handling, and translation feedback via
-    POST /translation/text/translate and the supportedFormats / supportedSelectors
-    / apiVersion utility endpoints.
-- aid: systran:systran-file-translation-api
-  name: SYSTRAN File Translation API
-  tags:
-  - File Translation
-  - Async
-  - Batch
-  - Documents
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.systran.net/translateAPI/translation/
-  baseURL: https://api-translate.systran.net
-  properties:
-  - url: https://docs.systran.net/translateAPI/translation/
-    type: APIReference
-  - url: openapi/systran-openapi.yml
-    type: OpenAPI
-  - url: collections/systran.postman_collection.json
-    type: PostmanCollection
-  description: Submit documents for asynchronous translation and manage translation
-    jobs and batches - POST /translation/file/translate (with async=true), poll
-    GET /translation/file/status by requestId, retrieve GET /translation/file/result,
-    and create/close/cancel batches under /translation/file/batch.
-- aid: systran:systran-supported-languages-api
-  name: SYSTRAN Supported Languages API
-  tags:
-  - Supported Languages
-  - Language Pairs
-  - Features
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.systran.net/translateAPI/translation/
-  baseURL: https://api-translate.systran.net
-  properties:
-  - url: https://docs.systran.net/translateAPI/translation/
-    type: APIReference
-  - url: openapi/systran-openapi.yml
-    type: OpenAPI
-  description: Discover which language pairs, model options, formats, and selectors
-    (domains, owners, sizes) are available - GET /translation/supportedLanguages,
-    GET /translation/supportedFeatures, GET /translation/supportedFormats, and
-    GET /translation/supportedSelectors.
-- aid: systran:systran-language-detection-api
-  name: SYSTRAN Language Detection API
-  tags:
-  - Language Detection
-  - Language Identification
-  - LID
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
-  baseURL: https://api-platform.systran.net
-  properties:
-  - url: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
-    type: Documentation
-  - url: openapi/systran-openapi.yml
-    type: OpenAPI
-  description: Automatically identify the language of a piece of text through the
-    SYSTRAN.io / Platform NLP language-identification service
-    (GET /nlp/lid/detectLanguage) and list the languages it can recognize
-    (GET /nlp/lid/supportedLanguages).
-- aid: systran:systran-nlp-api
-  name: SYSTRAN NLP API
-  tags:
-  - NLP
-  - Morphology
-  - Tokenization
-  - Named Entity Recognition
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
-  baseURL: https://api-platform.systran.net
-  properties:
-  - url: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
-    type: Documentation
-  - url: openapi/systran-openapi.yml
-    type: OpenAPI
-  description: Natural language processing over the SYSTRAN.io / Platform NLP
-    surface - morphological analysis (GET /nlp/morphology/extractRoots),
-    tokenization (GET /nlp/tokenization/tokenize), segmentation
-    (GET /nlp/segmentation/segment), and named entity recognition
-    (GET /nlp/ner/extractNamedEntities).
-- aid: systran:systran-dictionary-api
-  name: SYSTRAN Dictionary API
-  tags:
-  - Dictionary
-  - Lookup
-  - Terminology
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.systran.net/translateAPI/dictionary/
-  baseURL: https://api-translate.systran.net
-  properties:
-  - url: https://docs.systran.net/translateAPI/dictionary/
-    type: APIReference
-  - url: openapi/systran-openapi.yml
-    type: OpenAPI
-  description: Look up multilingual dictionary entries and manage user dictionaries
-    and their entries - GET /resources/dictionary/lookup plus create, update,
-    delete, list, import, export, and apply operations under /resources/dictionary.
-- aid: systran:systran-profiles-api
-  name: SYSTRAN Profiles API
-  tags:
-  - Profiles
-  - Translation Resources
-  - Permissions
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.systran.net/translateAPI/profiles/
-  baseURL: https://api-translate.systran.net
-  properties:
-  - url: https://docs.systran.net/translateAPI/profiles/
-    type: APIReference
-  - url: openapi/systran-openapi.yml
-    type: OpenAPI
-  description: Create and manage translation profiles that bundle a language pair
-    with dictionaries, corpora, and model options, and control their permissions -
-    GET /profiles, POST /profiles/create, activate/deactivate/delete, and
-    GET/POST /profiles/{id}/permissions, plus GET /translationResources.
 - aid: systran:systran-corpus-api
   name: SYSTRAN Corpus API
+  description: The Corpus API from SYSTRAN — 11 operation(s) for corpus.
+  humanURL: https://docs.systran.net/translateAPI/translation/
+  baseURL: https://api-translate.systran.net
   tags:
   - Corpus
-  - Translation Memory
-  - Segments
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.systran.net/translateAPI/corpus/
-  baseURL: https://api-translate.systran.net
   properties:
-  - url: https://docs.systran.net/translateAPI/corpus/
-    type: APIReference
-  - url: openapi/systran-openapi.yml
-    type: OpenAPI
-  description: Manage translation-memory corpora and their bilingual segments -
-    add, import, list, export, match, update, and delete corpora under
-    /resources/corpus, plus segment and segment-target CRUD used to adapt and
-    tune translation output.
+  - type: OpenAPI
+    url: openapi/systran-corpus-api-openapi.yml
+  - type: Documentation
+    url: https://docs.systran.net/translateAPI/en/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/translation/
+  - type: PostmanCollection
+    url: collections/systran.postman_collection.json
+  - type: OpenCollection
+    url: collections/systran.opencollection.json
+  - type: Documentation
+    url: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/dictionary/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/profiles/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/corpus/
+- aid: systran:systran-dictionary-api
+  name: SYSTRAN Dictionary API
+  description: The Dictionary API from SYSTRAN — 14 operation(s) for dictionary.
+  humanURL: https://docs.systran.net/translateAPI/translation/
+  baseURL: https://api-translate.systran.net
+  tags:
+  - Dictionary
+  properties:
+  - type: OpenAPI
+    url: openapi/systran-dictionary-api-openapi.yml
+  - type: Documentation
+    url: https://docs.systran.net/translateAPI/en/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/translation/
+  - type: PostmanCollection
+    url: collections/systran.postman_collection.json
+  - type: OpenCollection
+    url: collections/systran.opencollection.json
+  - type: Documentation
+    url: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/dictionary/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/profiles/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/corpus/
+- aid: systran:systran-file-translation-api
+  name: SYSTRAN File Translation API
+  description: The File Translation API from SYSTRAN — 8 operation(s) for file translation.
+  humanURL: https://docs.systran.net/translateAPI/translation/
+  baseURL: https://api-translate.systran.net
+  tags:
+  - File Translation
+  properties:
+  - type: OpenAPI
+    url: openapi/systran-file-translation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.systran.net/translateAPI/en/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/translation/
+  - type: PostmanCollection
+    url: collections/systran.postman_collection.json
+  - type: OpenCollection
+    url: collections/systran.opencollection.json
+  - type: Documentation
+    url: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/dictionary/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/profiles/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/corpus/
+- aid: systran:systran-language-detection-api
+  name: SYSTRAN Language Detection API
+  description: The Language Detection API from SYSTRAN — 2 operation(s) for language detection.
+  humanURL: https://docs.systran.net/translateAPI/translation/
+  baseURL: https://api-translate.systran.net
+  tags:
+  - Language Detection
+  properties:
+  - type: OpenAPI
+    url: openapi/systran-language-detection-api-openapi.yml
+  - type: Documentation
+    url: https://docs.systran.net/translateAPI/en/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/translation/
+  - type: PostmanCollection
+    url: collections/systran.postman_collection.json
+  - type: OpenCollection
+    url: collections/systran.opencollection.json
+  - type: Documentation
+    url: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/dictionary/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/profiles/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/corpus/
+- aid: systran:systran-nlp-api
+  name: SYSTRAN NLP API
+  description: The NLP API from SYSTRAN — 4 operation(s) for nlp.
+  humanURL: https://docs.systran.net/translateAPI/translation/
+  baseURL: https://api-translate.systran.net
+  tags:
+  - NLP
+  properties:
+  - type: OpenAPI
+    url: openapi/systran-nlp-api-openapi.yml
+  - type: Documentation
+    url: https://docs.systran.net/translateAPI/en/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/translation/
+  - type: PostmanCollection
+    url: collections/systran.postman_collection.json
+  - type: OpenCollection
+    url: collections/systran.opencollection.json
+  - type: Documentation
+    url: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/dictionary/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/profiles/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/corpus/
+- aid: systran:systran-profiles-api
+  name: SYSTRAN Profiles API
+  description: The Profiles API from SYSTRAN — 7 operation(s) for profiles.
+  humanURL: https://docs.systran.net/translateAPI/translation/
+  baseURL: https://api-translate.systran.net
+  tags:
+  - Profiles
+  properties:
+  - type: OpenAPI
+    url: openapi/systran-profiles-api-openapi.yml
+  - type: Documentation
+    url: https://docs.systran.net/translateAPI/en/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/translation/
+  - type: PostmanCollection
+    url: collections/systran.postman_collection.json
+  - type: OpenCollection
+    url: collections/systran.opencollection.json
+  - type: Documentation
+    url: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/dictionary/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/profiles/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/corpus/
+- aid: systran:systran-supported-languages-api
+  name: SYSTRAN Supported Languages API
+  description: The Supported Languages API from SYSTRAN — 4 operation(s) for supported languages.
+  humanURL: https://docs.systran.net/translateAPI/translation/
+  baseURL: https://api-translate.systran.net
+  tags:
+  - Supported Languages
+  properties:
+  - type: OpenAPI
+    url: openapi/systran-supported-languages-api-openapi.yml
+  - type: Documentation
+    url: https://docs.systran.net/translateAPI/en/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/translation/
+  - type: PostmanCollection
+    url: collections/systran.postman_collection.json
+  - type: OpenCollection
+    url: collections/systran.opencollection.json
+  - type: Documentation
+    url: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/dictionary/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/profiles/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/corpus/
+- aid: systran:systran-translation-api
+  name: SYSTRAN Translation API
+  description: The Translation API from SYSTRAN — 4 operation(s) for translation.
+  humanURL: https://docs.systran.net/translateAPI/translation/
+  baseURL: https://api-translate.systran.net
+  tags:
+  - Translation
+  properties:
+  - type: OpenAPI
+    url: openapi/systran-translation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.systran.net/translateAPI/en/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/translation/
+  - type: PostmanCollection
+    url: collections/systran.postman_collection.json
+  - type: OpenCollection
+    url: collections/systran.opencollection.json
+  - type: Documentation
+    url: https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/dictionary/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/profiles/
+  - type: APIReference
+    url: https://docs.systran.net/translateAPI/corpus/
 common:
 - type: AgenticAccess
   url: agentic-access/systran-agentic-access.yml
