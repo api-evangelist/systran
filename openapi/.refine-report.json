@@ -1,0 +1,28 @@
+{
+  "provider": "systran",
+  "sources": [
+    "systran-corpus-api-openapi.yml",
+    "systran-dictionary-api-openapi.yml",
+    "systran-file-translation-api-openapi.yml",
+    "systran-language-detection-api-openapi.yml",
+    "systran-nlp-api-openapi.yml",
+    "systran-profiles-api-openapi.yml",
+    "systran-supported-languages-api-openapi.yml",
+    "systran-translation-api-openapi.yml"
+  ],
+  "outputs": [
+    "systran-corpus-api-openapi.yml",
+    "systran-dictionary-api-openapi.yml",
+    "systran-file-translation-api-openapi.yml",
+    "systran-language-detection-api-openapi.yml",
+    "systran-nlp-api-openapi.yml",
+    "systran-profiles-api-openapi.yml",
+    "systran-supported-languages-api-openapi.yml",
+    "systran-translation-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
