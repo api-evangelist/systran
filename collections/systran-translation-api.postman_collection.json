@@ -1,0 +1,363 @@
+{
+  "item": [
+    {
+      "id": "a900168c-9da8-45af-85ea-9f3d6e73baf7",
+      "name": "Translation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e36c4b37-96c8-40de-b1a6-20eba5001637",
+          "name": "Translate text",
+          "request": {
+            "name": "Translate text",
+            "description": {
+              "content": "Translate one or more text inputs from a source to a target language.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "translation",
+                "text",
+                "translate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "source",
+                  "value": "<string>",
+                  "description": "Source language code (auto-detected when omitted)."
+                },
+                {
+                  "disabled": false,
+                  "key": "target",
+                  "value": "<string>",
+                  "description": "(Required) Target language code."
+                },
+                {
+                  "disabled": false,
+                  "key": "input",
+                  "value": "<string>",
+                  "description": "Text input(s) to translate."
+                },
+                {
+                  "disabled": false,
+                  "key": "input",
+                  "value": "<string>",
+                  "description": "Text input(s) to translate."
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "profile",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2066bda-8bbc-46d3-a710-ec9e0bda8e43",
+              "name": "Translation output.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "translation",
+                    "text",
+                    "translate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "source",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "target",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "input",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "input",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "profile",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13bda9a7-5a00-4fa4-b37e-485b07612948",
+          "name": "Get Translation API version",
+          "request": {
+            "name": "Get Translation API version",
+            "description": {},
+            "url": {
+              "path": [
+                "translation",
+                "apiVersion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "435f49e5-aea9-4247-8e02-5e8d4840254e",
+              "name": "API version.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "translation",
+                    "apiVersion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "831a05a6-83a7-4c6d-8062-f0a08490a193",
+          "name": "List translation profiles",
+          "request": {
+            "name": "List translation profiles",
+            "description": {},
+            "url": {
+              "path": [
+                "translation",
+                "profiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f1311f4e-0326-46d0-b89e-f4a3873ab9ec",
+              "name": "Profiles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "translation",
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "93bb2baa-b83f-4fba-93fb-b6adef710d55",
+          "name": "Submit translation feedback",
+          "request": {
+            "name": "Submit translation feedback",
+            "description": {},
+            "url": {
+              "path": [
+                "translation",
+                "feedback",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3fae79aa-cdbc-4bc0-b331-8cdcf6d8a85a",
+              "name": "Feedback recorded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "translation",
+                    "feedback",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-translate.systran.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "06ac7cfd-a011-4cb5-8654-520fa1af479b",
+    "name": "SYSTRAN Translate & NLP Corpus Translation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API for SYSTRAN machine translation and natural language processing. The Translate API (server https://api-translate.systran.net) covers text, HTML, and file translation, supported-language discovery, user dictionaries, corpora (translation memory), and translation profiles. The SYSTRAN.io / Platform NLP surface (server https://api-platform.systran.net) adds language detection, morphology, tokenization, segmentation, and named entity recognition. Authenticate with an API key passed as the `key` query parameter or an `Authorization` header.\n\nEndpoint status: paths under /translation, /resources, and /profiles are grounded in the published docs.systran.net Translate API reference (confirmed). Paths under /nlp are modeled from the historical SYSTRAN.io / Platform NLP service and marked with `x-endpoint-status: modeled`.\n\nContact Support:\n Name: SYSTRAN",
+      "type": "text/plain"
+    }
+  }
+}

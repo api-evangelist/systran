@@ -1,0 +1,761 @@
+{
+  "item": [
+    {
+      "id": "7351178d-211e-4271-9d1a-d18553bcc4f7",
+      "name": "Corpus",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0b0f710f-4ccc-49ae-b116-68d2d457740c",
+          "name": "List corpora",
+          "request": {
+            "name": "List corpora",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "corpus",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94026d10-37c3-41a6-bcfd-16573823da0b",
+              "name": "Corpora.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "corpus",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "73864a76-6abc-4c08-8956-7fb6b7125284",
+          "name": "Create a corpus",
+          "request": {
+            "name": "Create a corpus",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "corpus",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fec0fc8d-14ff-4c05-9e0f-1d10ea6bf4c8",
+              "name": "Corpus created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "corpus",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "63e620a0-76b1-48da-bc9e-4f53b6c41a3a",
+          "name": "Import corpus content",
+          "request": {
+            "name": "Import corpus content",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "corpus",
+                "import"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "33137f30-70a4-4a33-b745-45615c8ad3f6",
+              "name": "Corpus imported.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "corpus",
+                    "import"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed48feeb-0335-47f1-8946-77431c3812b1",
+          "name": "Get corpus details",
+          "request": {
+            "name": "Get corpus details",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "corpus",
+                "details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8bd9af24-a25f-417d-8e05-16f721b43ebf",
+              "name": "Corpus details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "corpus",
+                    "details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "afce3246-71a7-44aa-92ec-1fa19ee8c9f1",
+          "name": "Match segments against a corpus",
+          "request": {
+            "name": "Match segments against a corpus",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "corpus",
+                "match"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a36b115a-1256-4e25-bf5f-a5e2e22f4943",
+              "name": "Matches.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "corpus",
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "772be2bc-2e67-41f5-8fba-6be4f91d8af7",
+          "name": "Update a corpus",
+          "request": {
+            "name": "Update a corpus",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "corpus",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "53fe5b2b-756c-445d-a90a-10a05db693b6",
+              "name": "Corpus updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "corpus",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8f60241-0e5f-4291-b242-1c9d49878190",
+          "name": "Delete a corpus",
+          "request": {
+            "name": "Delete a corpus",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "corpus",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "20cb2129-8a5b-4b0b-8673-5dfcf2c25aad",
+              "name": "Corpus deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "corpus",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b5fb43b2-7e74-4af0-b64c-fcdd9bcab184",
+          "name": "List corpus segments",
+          "request": {
+            "name": "List corpus segments",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "corpus",
+                "segment",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6b889230-1792-4c27-980c-6c967eb578df",
+              "name": "Segments.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "corpus",
+                    "segment",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33a739cb-4ee9-4dde-af07-304e631a5d41",
+          "name": "Add a corpus segment",
+          "request": {
+            "name": "Add a corpus segment",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "corpus",
+                "segment",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cecd11dc-8354-40b4-ab47-eb00078fa87d",
+              "name": "Segment added.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "corpus",
+                    "segment",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa13b9db-7a7e-4fba-905d-142c86a3f35c",
+          "name": "Update a corpus segment",
+          "request": {
+            "name": "Update a corpus segment",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "corpus",
+                "segment",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "131d217a-33c8-4d77-8994-39f6c21c5ef8",
+              "name": "Segment updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "corpus",
+                    "segment",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07e08e6d-6897-47cd-8722-0e5570acfed7",
+          "name": "Delete a corpus segment",
+          "request": {
+            "name": "Delete a corpus segment",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "corpus",
+                "segment",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b26ee91a-b40f-47aa-98d5-4de5892d2b17",
+              "name": "Segment deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "corpus",
+                    "segment",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-translate.systran.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6d791352-3c7a-4d5e-8014-ba7e6a2497be",
+    "name": "SYSTRAN Translate & NLP Corpus API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API for SYSTRAN machine translation and natural language processing. The Translate API (server https://api-translate.systran.net) covers text, HTML, and file translation, supported-language discovery, user dictionaries, corpora (translation memory), and translation profiles. The SYSTRAN.io / Platform NLP surface (server https://api-platform.systran.net) adds language detection, morphology, tokenization, segmentation, and named entity recognition. Authenticate with an API key passed as the `key` query parameter or an `Authorization` header.\n\nEndpoint status: paths under /translation, /resources, and /profiles are grounded in the published docs.systran.net Translate API reference (confirmed). Paths under /nlp are modeled from the historical SYSTRAN.io / Platform NLP service and marked with `x-endpoint-status: modeled`.\n\nContact Support:\n Name: SYSTRAN",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SYSTRAN Translate & NLP Corpus API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Corpus",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List corpora",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/resources/corpus/list"
+          },
+          "docs": "List corpora"
+        },
+        {
+          "info": {
+            "name": "Create a corpus",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/corpus/add"
+          },
+          "docs": "Create a corpus"
+        },
+        {
+          "info": {
+            "name": "Import corpus content",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/corpus/import"
+          },
+          "docs": "Import corpus content"
+        },
+        {
+          "info": {
+            "name": "Get corpus details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/resources/corpus/details"
+          },
+          "docs": "Get corpus details"
+        },
+        {
+          "info": {
+            "name": "Match segments against a corpus",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/resources/corpus/match"
+          },
+          "docs": "Match segments against a corpus"
+        },
+        {
+          "info": {
+            "name": "Update a corpus",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/corpus/update"
+          },
+          "docs": "Update a corpus"
+        },
+        {
+          "info": {
+            "name": "Delete a corpus",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/corpus/delete"
+          },
+          "docs": "Delete a corpus"
+        },
+        {
+          "info": {
+            "name": "List corpus segments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/resources/corpus/segment/list"
+          },
+          "docs": "List corpus segments"
+        },
+        {
+          "info": {
+            "name": "Add a corpus segment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/corpus/segment/add"
+          },
+          "docs": "Add a corpus segment"
+        },
+        {
+          "info": {
+            "name": "Update a corpus segment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/corpus/segment/update"
+          },
+          "docs": "Update a corpus segment"
+        },
+        {
+          "info": {
+            "name": "Delete a corpus segment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/corpus/segment/delete"
+          },
+          "docs": "Delete a corpus segment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

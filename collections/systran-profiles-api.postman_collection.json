@@ -1,0 +1,577 @@
+{
+  "item": [
+    {
+      "id": "f99625bc-5131-4726-ada5-0dde25a9e8ba",
+      "name": "Profiles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "534b957e-fc4e-4907-ada6-4a6233c33b0f",
+          "name": "List profiles",
+          "request": {
+            "name": "List profiles",
+            "description": {},
+            "url": {
+              "path": [
+                "profiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9e74ceb0-00b1-4f61-bbfc-a3b9dd82235b",
+              "name": "Profiles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f02737c8-b105-40b5-988a-c65ecde50de3",
+          "name": "Create a profile",
+          "request": {
+            "name": "Create a profile",
+            "description": {},
+            "url": {
+              "path": [
+                "profiles",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "170b4141-6d43-48f2-8ccf-20703b626a44",
+              "name": "Profile created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profiles",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7c1d42b-3f1a-4e76-869a-39aae89d79f9",
+          "name": "Delete a profile",
+          "request": {
+            "name": "Delete a profile",
+            "description": {},
+            "url": {
+              "path": [
+                "profiles",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8f3c1412-ad2f-4fc5-92ce-f4899e0f0adf",
+              "name": "Profile deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profiles",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "64fc7b36-198f-4f82-8f84-20fa04683bd6",
+          "name": "Activate a profile",
+          "request": {
+            "name": "Activate a profile",
+            "description": {},
+            "url": {
+              "path": [
+                "profiles",
+                "activate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3677c966-773e-423a-ac05-04931c39378c",
+              "name": "Profile activated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profiles",
+                    "activate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d21c812f-27fd-48d4-b053-5e2e01ff2cc7",
+          "name": "Deactivate a profile",
+          "request": {
+            "name": "Deactivate a profile",
+            "description": {},
+            "url": {
+              "path": [
+                "profiles",
+                "deactivate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e69b78ce-1827-4db2-8943-5354cd8b55bc",
+              "name": "Profile deactivated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profiles",
+                    "deactivate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9cd7afcb-de7c-4d40-a08b-4012418fdc5b",
+          "name": "Get profile permissions",
+          "request": {
+            "name": "Get profile permissions",
+            "description": {},
+            "url": {
+              "path": [
+                "profiles",
+                ":id",
+                "permissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6e8535d9-d7ca-4516-b1f0-03fe78d758f8",
+              "name": "Permissions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profiles",
+                    ":id",
+                    "permissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e571ba35-371a-4e1e-808b-e4d2addd518f",
+          "name": "Update profile permissions",
+          "request": {
+            "name": "Update profile permissions",
+            "description": {},
+            "url": {
+              "path": [
+                "profiles",
+                ":id",
+                "permissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9d499b32-2b7b-4ffc-90a4-dfa8725e8aa0",
+              "name": "Permissions updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "profiles",
+                    ":id",
+                    "permissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6eeb72d2-66f8-4c59-99a4-0a1435211411",
+          "name": "List translation resources",
+          "request": {
+            "name": "List translation resources",
+            "description": {},
+            "url": {
+              "path": [
+                "translationResources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c917ef51-aa39-4079-8bbe-4074a84ee962",
+              "name": "Translation resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "translationResources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-translate.systran.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "86de7e98-8fa0-4706-832e-2cdf4bc35caa",
+    "name": "SYSTRAN Translate & NLP Corpus Profiles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API for SYSTRAN machine translation and natural language processing. The Translate API (server https://api-translate.systran.net) covers text, HTML, and file translation, supported-language discovery, user dictionaries, corpora (translation memory), and translation profiles. The SYSTRAN.io / Platform NLP surface (server https://api-platform.systran.net) adds language detection, morphology, tokenization, segmentation, and named entity recognition. Authenticate with an API key passed as the `key` query parameter or an `Authorization` header.\n\nEndpoint status: paths under /translation, /resources, and /profiles are grounded in the published docs.systran.net Translate API reference (confirmed). Paths under /nlp are modeled from the historical SYSTRAN.io / Platform NLP service and marked with `x-endpoint-status: modeled`.\n\nContact Support:\n Name: SYSTRAN",
+      "type": "text/plain"
+    }
+  }
+}

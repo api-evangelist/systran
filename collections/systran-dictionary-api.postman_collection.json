@@ -1,0 +1,985 @@
+{
+  "item": [
+    {
+      "id": "79a91d28-65e4-44b8-8bfd-cfd5cce3a168",
+      "name": "Dictionary",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7582ee1c-8643-447b-aaab-9c5aa0424293",
+          "name": "Look up dictionary entries",
+          "request": {
+            "name": "Look up dictionary entries",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "lookup"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "source",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "target",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "input",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "99522272-0145-4cba-801c-1f5940fdfb5e",
+              "name": "Dictionary matches.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "lookup"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "source",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "target",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "input",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a54ca08-77b9-45b9-bc3a-6e55c6bca22c",
+          "name": "List languages supported by dictionary lookup",
+          "request": {
+            "name": "List languages supported by dictionary lookup",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "lookup",
+                "supportedLanguages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "df20550f-5b81-414f-84ce-2a50e9b81764",
+              "name": "Supported languages.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "lookup",
+                    "supportedLanguages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "45dfe865-5746-4217-86e6-2b78662cede8",
+          "name": "List languages supported by user dictionaries",
+          "request": {
+            "name": "List languages supported by user dictionaries",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "supportedLanguages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "39b9cd2a-8e59-4da9-998e-ce8178e0c6b2",
+              "name": "Supported languages.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "supportedLanguages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bbfa4fe1-8cbd-4e00-86a8-d298037a5a62",
+          "name": "List user dictionaries",
+          "request": {
+            "name": "List user dictionaries",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ce690d16-9c1e-4f48-9ea2-a7b877fb012b",
+              "name": "Dictionaries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a34ce0f0-a60c-45e2-ab16-008543ab7b0f",
+          "name": "Create a user dictionary",
+          "request": {
+            "name": "Create a user dictionary",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f10ea0d2-f543-4f25-be70-4916e67f8e17",
+              "name": "Dictionary created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "045ec869-709f-467d-b217-eadb82289efa",
+          "name": "Update a user dictionary",
+          "request": {
+            "name": "Update a user dictionary",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "411a13a2-a4c4-401e-b864-0487b0be424c",
+              "name": "Dictionary updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "401d439b-a146-474a-8bf3-880f85ec4dea",
+          "name": "Delete a user dictionary",
+          "request": {
+            "name": "Delete a user dictionary",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c4ad0c28-8475-435f-bc45-28214fb2c2e7",
+              "name": "Dictionary deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15800640-e699-4c68-a4cb-57c14a27ce6e",
+          "name": "Export a user dictionary",
+          "request": {
+            "name": "Export a user dictionary",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "export"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4f9e4254-7a28-466b-8fcb-3843a3d353c8",
+              "name": "Dictionary export.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "export"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31584028-379a-444b-b9d7-f396e17d95b2",
+          "name": "Apply a user dictionary",
+          "request": {
+            "name": "Apply a user dictionary",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "apply"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "965219dd-326f-477c-a093-ed14287b0bce",
+              "name": "Dictionary applied.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "apply"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c5c15c8f-689e-47e1-bb0e-10080bafd4ad",
+          "name": "List dictionary entries",
+          "request": {
+            "name": "List dictionary entries",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "entry",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "97157de4-09d1-4d64-be93-ca902a90e340",
+              "name": "Entries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "entry",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "776884bc-636a-47cb-ac97-e2a90d9839ef",
+          "name": "Add a dictionary entry",
+          "request": {
+            "name": "Add a dictionary entry",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "entry",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cfb8aa11-f376-4252-bc0e-32da780b45fc",
+              "name": "Entry added.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "entry",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a44dc3b6-5dfa-48f1-a299-5ff51d504bad",
+          "name": "Update a dictionary entry",
+          "request": {
+            "name": "Update a dictionary entry",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "entry",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5f917f03-ce80-4211-b430-8442a4f9ef22",
+              "name": "Entry updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "entry",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "65179e7b-24b5-49fc-8b36-03a4c2f9b108",
+          "name": "Delete a dictionary entry",
+          "request": {
+            "name": "Delete a dictionary entry",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "entry",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3e90f492-51e7-4352-a756-1fc167f83b68",
+              "name": "Entry deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "entry",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5e62c1e5-5a75-492f-8698-2430e7907741",
+          "name": "Import dictionary entries",
+          "request": {
+            "name": "Import dictionary entries",
+            "description": {},
+            "url": {
+              "path": [
+                "resources",
+                "dictionary",
+                "entry",
+                "import"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5fe13b3-ec73-4ed8-9224-a2d6720c0cc8",
+              "name": "Entries imported.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resources",
+                    "dictionary",
+                    "entry",
+                    "import"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-translate.systran.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c3b8f5a9-4a3c-43cb-b9c9-f251f0395a28",
+    "name": "SYSTRAN Translate & NLP Corpus Dictionary API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API for SYSTRAN machine translation and natural language processing. The Translate API (server https://api-translate.systran.net) covers text, HTML, and file translation, supported-language discovery, user dictionaries, corpora (translation memory), and translation profiles. The SYSTRAN.io / Platform NLP surface (server https://api-platform.systran.net) adds language detection, morphology, tokenization, segmentation, and named entity recognition. Authenticate with an API key passed as the `key` query parameter or an `Authorization` header.\n\nEndpoint status: paths under /translation, /resources, and /profiles are grounded in the published docs.systran.net Translate API reference (confirmed). Paths under /nlp are modeled from the historical SYSTRAN.io / Platform NLP service and marked with `x-endpoint-status: modeled`.\n\nContact Support:\n Name: SYSTRAN",
+      "type": "text/plain"
+    }
+  }
+}

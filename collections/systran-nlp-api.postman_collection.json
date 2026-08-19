@@ -1,0 +1,409 @@
+{
+  "item": [
+    {
+      "id": "0c7542f4-d560-43fa-b172-eb91882dab86",
+      "name": "NLP",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a89c55ab-9390-4a30-a889-e0bcaba6df55",
+          "name": "Extract morphological roots",
+          "request": {
+            "name": "Extract morphological roots",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "nlp",
+                "morphology",
+                "extractRoots"
+              ],
+              "host": [
+                "api-platform",
+                "systran",
+                "net"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lang",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "input",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "76a05166-bd5c-4634-b3e1-950c7cb055df",
+              "name": "Morphological analysis.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "nlp",
+                    "morphology",
+                    "extractRoots"
+                  ],
+                  "host": [
+                    "api-platform",
+                    "systran",
+                    "net"
+                  ],
+                  "query": [
+                    {
+                      "key": "lang",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "input",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8ca5b5a9-8968-4a72-b315-c789843d2807",
+          "name": "Tokenize text",
+          "request": {
+            "name": "Tokenize text",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "nlp",
+                "tokenization",
+                "tokenize"
+              ],
+              "host": [
+                "api-platform",
+                "systran",
+                "net"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lang",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "input",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ff4d7391-cfc4-4927-9260-0271afdb18a8",
+              "name": "Tokens.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "nlp",
+                    "tokenization",
+                    "tokenize"
+                  ],
+                  "host": [
+                    "api-platform",
+                    "systran",
+                    "net"
+                  ],
+                  "query": [
+                    {
+                      "key": "lang",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "input",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "92b4f3b2-0820-46ce-b6c9-0cddd691167e",
+          "name": "Segment text into sentences",
+          "request": {
+            "name": "Segment text into sentences",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "nlp",
+                "segmentation",
+                "segment"
+              ],
+              "host": [
+                "api-platform",
+                "systran",
+                "net"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lang",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "input",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e0287373-be9d-46f1-9d2b-f659ea234bc7",
+              "name": "Segments.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "nlp",
+                    "segmentation",
+                    "segment"
+                  ],
+                  "host": [
+                    "api-platform",
+                    "systran",
+                    "net"
+                  ],
+                  "query": [
+                    {
+                      "key": "lang",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "input",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cc8869de-8179-49fd-b0e5-8827a4d8ccd7",
+          "name": "Extract named entities",
+          "request": {
+            "name": "Extract named entities",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "nlp",
+                "ner",
+                "extractNamedEntities"
+              ],
+              "host": [
+                "api-platform",
+                "systran",
+                "net"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lang",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "input",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e4b97f6f-6091-44c4-9d3a-bf7af55a8895",
+              "name": "Named entities.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "nlp",
+                    "ner",
+                    "extractNamedEntities"
+                  ],
+                  "host": [
+                    "api-platform",
+                    "systran",
+                    "net"
+                  ],
+                  "query": [
+                    {
+                      "key": "lang",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "input",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-translate.systran.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7b6c1919-be7a-4968-8613-04acd0ab53dc",
+    "name": "SYSTRAN Translate & Corpus NLP API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API for SYSTRAN machine translation and natural language processing. The Translate API (server https://api-translate.systran.net) covers text, HTML, and file translation, supported-language discovery, user dictionaries, corpora (translation memory), and translation profiles. The SYSTRAN.io / Platform NLP surface (server https://api-platform.systran.net) adds language detection, morphology, tokenization, segmentation, and named entity recognition. Authenticate with an API key passed as the `key` query parameter or an `Authorization` header.\n\nEndpoint status: paths under /translation, /resources, and /profiles are grounded in the published docs.systran.net Translate API reference (confirmed). Paths under /nlp are modeled from the historical SYSTRAN.io / Platform NLP service and marked with `x-endpoint-status: modeled`.\n\nContact Support:\n Name: SYSTRAN",
+      "type": "text/plain"
+    }
+  }
+}

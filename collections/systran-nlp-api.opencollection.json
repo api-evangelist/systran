@@ -1,0 +1,118 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SYSTRAN Translate & Corpus NLP API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NLP",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Extract morphological roots",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/nlp/morphology/extractRoots",
+            "params": [
+              {
+                "name": "lang",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "input",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Extract morphological roots"
+        },
+        {
+          "info": {
+            "name": "Tokenize text",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/nlp/tokenization/tokenize",
+            "params": [
+              {
+                "name": "lang",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "input",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Tokenize text"
+        },
+        {
+          "info": {
+            "name": "Segment text into sentences",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/nlp/segmentation/segment",
+            "params": [
+              {
+                "name": "lang",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "input",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Segment text into sentences"
+        },
+        {
+          "info": {
+            "name": "Extract named entities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/nlp/ner/extractNamedEntities",
+            "params": [
+              {
+                "name": "lang",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "input",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Extract named entities"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SYSTRAN Translate & NLP Corpus Language Detection API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Language Detection",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Detect the language of a text",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/nlp/lid/detectLanguage",
+            "params": [
+              {
+                "name": "input",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Detect the language of a text"
+        },
+        {
+          "info": {
+            "name": "List languages the detector can recognize",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/nlp/lid/supportedLanguages"
+          },
+          "docs": "List languages the detector can recognize"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,169 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SYSTRAN Translate & NLP Corpus File Translation API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "File Translation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Translate a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/translation/file/translate",
+            "params": [
+              {
+                "name": "source",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "target",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "async",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "input",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Submit a document for translation. Set async=true for asynchronous processing."
+        },
+        {
+          "info": {
+            "name": "Get async file translation status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/file/status",
+            "params": [
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get async file translation status"
+        },
+        {
+          "info": {
+            "name": "Retrieve async file translation result",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/file/result",
+            "params": [
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve async file translation result"
+        },
+        {
+          "info": {
+            "name": "Cancel an async file translation request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/translation/file/cancel",
+            "params": [
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Cancel an async file translation request"
+        },
+        {
+          "info": {
+            "name": "Create a translation batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/translation/file/batch/create"
+          },
+          "docs": "Create a translation batch"
+        },
+        {
+          "info": {
+            "name": "Get batch status and associated requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/file/batch/status",
+            "params": [
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get batch status and associated requests"
+        },
+        {
+          "info": {
+            "name": "Close a batch (no new requests)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/translation/file/batch/close"
+          },
+          "docs": "Close a batch (no new requests)"
+        },
+        {
+          "info": {
+            "name": "Cancel a batch and its ongoing requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/translation/file/batch/cancel"
+          },
+          "docs": "Cancel a batch and its ongoing requests"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

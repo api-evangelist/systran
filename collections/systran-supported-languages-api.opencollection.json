@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SYSTRAN Translate & NLP Corpus Supported Languages API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Supported Languages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List supported language pairs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/supportedLanguages",
+            "params": [
+              {
+                "name": "source",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "target",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List supported language pairs"
+        },
+        {
+          "info": {
+            "name": "List available model options by language pair",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/supportedFeatures"
+          },
+          "docs": "List available model options by language pair"
+        },
+        {
+          "info": {
+            "name": "List supported input/output formats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/supportedFormats"
+          },
+          "docs": "List supported input/output formats"
+        },
+        {
+          "info": {
+            "name": "List available domains, owners, and sizes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/supportedSelectors"
+          },
+          "docs": "List available domains, owners, and sizes"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

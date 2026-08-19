@@ -1,0 +1,197 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SYSTRAN Translate & NLP Corpus Dictionary API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Dictionary",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Look up dictionary entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/resources/dictionary/lookup",
+            "params": [
+              {
+                "name": "source",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "target",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "input",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Look up dictionary entries"
+        },
+        {
+          "info": {
+            "name": "List languages supported by dictionary lookup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/resources/dictionary/lookup/supportedLanguages"
+          },
+          "docs": "List languages supported by dictionary lookup"
+        },
+        {
+          "info": {
+            "name": "List languages supported by user dictionaries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/resources/dictionary/supportedLanguages"
+          },
+          "docs": "List languages supported by user dictionaries"
+        },
+        {
+          "info": {
+            "name": "List user dictionaries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/dictionary/list"
+          },
+          "docs": "List user dictionaries"
+        },
+        {
+          "info": {
+            "name": "Create a user dictionary",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/dictionary/add"
+          },
+          "docs": "Create a user dictionary"
+        },
+        {
+          "info": {
+            "name": "Update a user dictionary",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/dictionary/update"
+          },
+          "docs": "Update a user dictionary"
+        },
+        {
+          "info": {
+            "name": "Delete a user dictionary",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/dictionary/delete"
+          },
+          "docs": "Delete a user dictionary"
+        },
+        {
+          "info": {
+            "name": "Export a user dictionary",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/dictionary/export"
+          },
+          "docs": "Export a user dictionary"
+        },
+        {
+          "info": {
+            "name": "Apply a user dictionary",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/dictionary/apply"
+          },
+          "docs": "Apply a user dictionary"
+        },
+        {
+          "info": {
+            "name": "List dictionary entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/dictionary/entry/list"
+          },
+          "docs": "List dictionary entries"
+        },
+        {
+          "info": {
+            "name": "Add a dictionary entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/dictionary/entry/add"
+          },
+          "docs": "Add a dictionary entry"
+        },
+        {
+          "info": {
+            "name": "Update a dictionary entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/dictionary/entry/update"
+          },
+          "docs": "Update a dictionary entry"
+        },
+        {
+          "info": {
+            "name": "Delete a dictionary entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/dictionary/entry/delete"
+          },
+          "docs": "Delete a dictionary entry"
+        },
+        {
+          "info": {
+            "name": "Import dictionary entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/resources/dictionary/entry/import"
+          },
+          "docs": "Import dictionary entries"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

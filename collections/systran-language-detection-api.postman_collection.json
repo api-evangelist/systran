@@ -1,0 +1,200 @@
+{
+  "item": [
+    {
+      "id": "868ff5eb-9bad-4edb-997e-aaacea57b502",
+      "name": "Language Detection",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5b0bc5dd-a703-41ac-8dd7-ca9e0669e161",
+          "name": "Detect the language of a text",
+          "request": {
+            "name": "Detect the language of a text",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "nlp",
+                "lid",
+                "detectLanguage"
+              ],
+              "host": [
+                "api-platform",
+                "systran",
+                "net"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "input",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "38c1de49-bcad-4606-a15d-8eedcd88faeb",
+              "name": "Detected language and confidence.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "nlp",
+                    "lid",
+                    "detectLanguage"
+                  ],
+                  "host": [
+                    "api-platform",
+                    "systran",
+                    "net"
+                  ],
+                  "query": [
+                    {
+                      "key": "input",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c35c21f5-e4f9-49f2-ac7c-bd52493e28b2",
+          "name": "List languages the detector can recognize",
+          "request": {
+            "name": "List languages the detector can recognize",
+            "description": {},
+            "url": {
+              "protocol": "https",
+              "path": [
+                "nlp",
+                "lid",
+                "supportedLanguages"
+              ],
+              "host": [
+                "api-platform",
+                "systran",
+                "net"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9fdc44b3-b3df-47c6-84b7-219a84b3a102",
+              "name": "Supported languages.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "nlp",
+                    "lid",
+                    "supportedLanguages"
+                  ],
+                  "host": [
+                    "api-platform",
+                    "systran",
+                    "net"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-translate.systran.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0e7af32c-799c-4a38-bf67-e432766ec1cc",
+    "name": "SYSTRAN Translate & NLP Corpus Language Detection API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful API for SYSTRAN machine translation and natural language processing. The Translate API (server https://api-translate.systran.net) covers text, HTML, and file translation, supported-language discovery, user dictionaries, corpora (translation memory), and translation profiles. The SYSTRAN.io / Platform NLP surface (server https://api-platform.systran.net) adds language detection, morphology, tokenization, segmentation, and named entity recognition. Authenticate with an API key passed as the `key` query parameter or an `Authorization` header.\n\nEndpoint status: paths under /translation, /resources, and /profiles are grounded in the published docs.systran.net Translate API reference (confirmed). Paths under /nlp are modeled from the historical SYSTRAN.io / Platform NLP service and marked with `x-endpoint-status: modeled`.\n\nContact Support:\n Name: SYSTRAN",
+      "type": "text/plain"
+    }
+  }
+}

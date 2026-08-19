@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SYSTRAN Translate & NLP Corpus Translation API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Translation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Translate text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/translation/text/translate",
+            "params": [
+              {
+                "name": "source",
+                "value": "",
+                "type": "query",
+                "description": "Source language code (auto-detected when omitted)."
+              },
+              {
+                "name": "target",
+                "value": "",
+                "type": "query",
+                "description": "Target language code."
+              },
+              {
+                "name": "input",
+                "value": "",
+                "type": "query",
+                "description": "Text input(s) to translate."
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "profile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Translate one or more text inputs from a source to a target language."
+        },
+        {
+          "info": {
+            "name": "Get Translation API version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/apiVersion"
+          },
+          "docs": "Get Translation API version"
+        },
+        {
+          "info": {
+            "name": "List translation profiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-translate.systran.net/translation/profiles"
+          },
+          "docs": "List translation profiles"
+        },
+        {
+          "info": {
+            "name": "Submit translation feedback",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-translate.systran.net/translation/feedback/add"
+          },
+          "docs": "Submit translation feedback"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
