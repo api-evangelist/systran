@@ -13,6 +13,18 @@ description: SYSTRAN is a machine translation and natural language processing co
   (key query parameter or Authorization header). SYSTRAN sells access as a
   Developer cloud subscription (14-day / 500,000-character free trial) plus
   Professional SaaS and Enterprise cloud/on-premise plans, billed per character.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
