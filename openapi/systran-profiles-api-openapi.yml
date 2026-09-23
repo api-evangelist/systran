@@ -1,10 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: SYSTRAN Translate & NLP Corpus Profiles API
-  description: 'RESTful API for SYSTRAN machine translation and natural language processing. The Translate API (server https://api-translate.systran.net) covers text, HTML, and file translation, supported-language discovery, user dictionaries, corpora (translation memory), and translation profiles. The SYSTRAN.io / Platform NLP surface (server https://api-platform.systran.net) adds language detection, morphology, tokenization, segmentation, and named entity recognition. Authenticate with an API key passed as the `key` query parameter or an `Authorization` header.
-
-
-    Endpoint status: paths under /translation, /resources, and /profiles are grounded in the published docs.systran.net Translate API reference (confirmed). Paths under /nlp are modeled from the historical SYSTRAN.io / Platform NLP service and marked with `x-endpoint-status: modeled`.'
+  title: SYSTRAN Translate & NLP Profiles API
+  description: RESTful API for SYSTRAN machine translation and natural language processing.
   version: '1.0'
   contact:
     name: SYSTRAN

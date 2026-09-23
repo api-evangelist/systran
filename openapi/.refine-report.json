@@ -1,14 +1,7 @@
 {
   "provider": "systran",
   "sources": [
-    "systran-corpus-api-openapi.yml",
-    "systran-dictionary-api-openapi.yml",
-    "systran-file-translation-api-openapi.yml",
-    "systran-language-detection-api-openapi.yml",
-    "systran-nlp-api-openapi.yml",
-    "systran-profiles-api-openapi.yml",
-    "systran-supported-languages-api-openapi.yml",
-    "systran-translation-api-openapi.yml"
+    "_original/systran-openapi.yml"
   ],
   "outputs": [
     "systran-corpus-api-openapi.yml",
@@ -23,6 +16,19 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "systran-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "systran-corpus-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "systran-dictionary-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "systran-file-translation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "systran-language-detection-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "systran-nlp-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "systran-profiles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "systran-supported-languages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "systran-translation-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
