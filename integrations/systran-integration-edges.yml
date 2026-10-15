@@ -1,0 +1,26 @@
+edges:
+- partner_name: Hugging Face Hub
+  partner: hugging-face
+  partner_match: framework
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://huggingface.co/Systran
+  coverage_role:
+  - stt
+  framework_signals:
+    packages:
+    - huggingface.co/Systran
+    roles:
+    - stt
+    vendor_domain: systran.net
+    hub_org_models_in_top_1000: 15
+    hub_org_downloads: 13155120
+  matched_by: verified-domain-table
+  detected_by: sweep-voice-ai.py
+  first_seen: '2026-10-15'
+generated: '2026-10-15'
+method: searched
+checked:
+- https://huggingface.co/models?pipeline_tag=text-to-speech
