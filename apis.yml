@@ -43,6 +43,13 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/systran.pn
 tags:
 - Machine Translation
 - Translation
+- Natural Language Processing
+- Neural Machine Translation
+- Localization
+- Language Detection
+tags_raw:
+- Machine Translation
+- Translation
 - NLP
 - Neural Machine Translation
 - Localization
@@ -83,6 +90,8 @@ apis:
   humanURL: https://docs.systran.net/translateAPI/translation/
   baseURL: https://api-translate.systran.net
   tags:
+  - Dictionaries
+  tags_raw:
   - Dictionary
   properties:
   - type: OpenAPI
@@ -161,6 +170,8 @@ apis:
   humanURL: https://docs.systran.net/translateAPI/translation/
   baseURL: https://api-translate.systran.net
   tags:
+  - Natural Language Processing
+  tags_raw:
   - NLP
   properties:
   - type: OpenAPI
