@@ -16,7 +16,7 @@ edges:
     - stt
     vendor_domain: systran.net
     hub_org_models_in_top_1000: 15
-    hub_org_downloads: 13155120
+    hub_org_downloads: 13543487
   matched_by: verified-domain-table
   detected_by: sweep-voice-ai.py
   first_seen: '2026-10-15'
