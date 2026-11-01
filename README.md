@@ -1,4 +1,4 @@
-# SYSTRAN (systran)
+# SYSTRAN
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,93 +64,131 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-SYSTRAN is a machine translation and natural language processing company offering neural (Pure Neural Machine Translation / PNMT) translation across 50+ languages. The SYSTRAN Translate API is a RESTful service (base `https://api-translate.systran.net`) that translates text, files, and HTML, detects and lists supported languages, and manages translation profiles, user dictionaries, and corpora. The broader SYSTRAN Platform / SYSTRAN.io surface adds NLP operations - morphology, tokenization, segmentation, named entity recognition, and language identification. Requests authenticate with an API key (the `key` query parameter or an `Authorization` header). SYSTRAN sells access as a Developer cloud subscription (14-day / 500,000-character free trial) plus Professional SaaS and Enterprise cloud/on-premise plans, billed per character.
+SYSTRAN is a machine translation and natural language processing company offering neural (Pure Neural Machine Translation / PNMT) translation across 50+ languages. The SYSTRAN Translate API is a RESTful service (base https://api-translate.systran.net) that translates text, files, and HTML, detects and lists supported languages, and manages translation profiles, user dictionaries, and corpora. The broader SYSTRAN Platform / SYSTRAN.io surface adds NLP operations - morphology, tokenization, segmentation, named entity recognition, and language identification. Requests authenticate with an API key (key query parameter or Authorization header). SYSTRAN sells access as a Developer cloud subscription (14-day / 500,000-character free trial) plus Professional SaaS and Enterprise cloud/on-premise plans, billed per character.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/systran/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/systran/refs/heads/main/apis.yml)
+**Areas:** Machine Translation · Translation · Natural Language Processing · Neural Machine Translation · Localization · Language Detection
 
-## Tags
+## SYSTRAN on APIs.io
 
-- Machine Translation
-- Translation
-- NLP
-- Neural Machine Translation
-- Localization
-- Language Detection
+Everything profiled for SYSTRAN is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/systran/](https://apis.io/providers/systran/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (8)
 
-- **Created:** 2026-07-03
-- **Modified:** 2026-07-03
+- [SYSTRAN Corpus API](https://apis.io/apis/systran/systran-corpus-api/) — The Corpus API from SYSTRAN — 11 operation(s) for corpus.
+- [SYSTRAN Dictionary API](https://apis.io/apis/systran/systran-dictionary-api/) — The Dictionary API from SYSTRAN — 14 operation(s) for dictionary.
+- [SYSTRAN File Translation API](https://apis.io/apis/systran/systran-file-translation-api/) — The File Translation API from SYSTRAN — 8 operation(s) for file translation.
+- [SYSTRAN Language Detection API](https://apis.io/apis/systran/systran-language-detection-api/) — The Language Detection API from SYSTRAN — 2 operation(s) for language detection.
+- [SYSTRAN NLP API](https://apis.io/apis/systran/systran-nlp-api/) — The NLP API from SYSTRAN — 4 operation(s) for nlp.
+- [SYSTRAN Profiles API](https://apis.io/apis/systran/systran-profiles-api/) — The Profiles API from SYSTRAN — 7 operation(s) for profiles.
+- [SYSTRAN Supported Languages API](https://apis.io/apis/systran/systran-supported-languages-api/) — The Supported Languages API from SYSTRAN — 4 operation(s) for supported languages.
+- [SYSTRAN Translation API](https://apis.io/apis/systran/systran-translation-api/) — The Translation API from SYSTRAN — 4 operation(s) for translation.
 
-## APIs
+### Published properties
 
-### SYSTRAN Translation API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Translate text and inline HTML from a source language to a target language with SYSTRAN Pure Neural Machine Translation. Supports profile selection, format handling, and translation feedback via `POST /translation/text/translate` and the supportedFormats / supportedSelectors / apiVersion utility endpoints.
+#### Agentic access (1)
 
-- **Human URL:** [https://docs.systran.net/translateAPI/translation/](https://docs.systran.net/translateAPI/translation/)
-- **Base URL:** `https://api-translate.systran.net`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-### SYSTRAN File Translation API
+- [Systran Agentic Access](https://apis.io/agentic-access/systran/systran-agentic-access/)
 
-Submit documents for asynchronous translation and manage translation jobs and batches - `POST /translation/file/translate` (with `async=true`), poll `GET /translation/file/status` by `requestId`, retrieve `GET /translation/file/result`, and create/close/cancel batches under `/translation/file/batch`.
+#### Collections (9)
 
-- **Human URL:** [https://docs.systran.net/translateAPI/translation/](https://docs.systran.net/translateAPI/translation/)
-- **Base URL:** `https://api-translate.systran.net`
+Postman and Open Collection request collections.
 
-### SYSTRAN Supported Languages API
+- [SYSTRAN Translate & NLP API](https://apis.io/collections/systran/open-systran/)
+- [SYSTRAN Translate & NLP Corpus API](https://apis.io/collections/systran/open-systran-corpus-api/)
+- [SYSTRAN Translate & NLP Corpus Dictionary API](https://apis.io/collections/systran/open-systran-dictionary-api/)
+- [SYSTRAN Translate & NLP Corpus File Translation API](https://apis.io/collections/systran/open-systran-file-translation-api/)
+- [SYSTRAN Translate & NLP Corpus Language Detection API](https://apis.io/collections/systran/open-systran-language-detection-api/)
+- [SYSTRAN Translate & Corpus NLP API](https://apis.io/collections/systran/open-systran-nlp-api/)
+- [SYSTRAN Translate & NLP Corpus Profiles API](https://apis.io/collections/systran/open-systran-profiles-api/)
+- [SYSTRAN Translate & NLP Corpus Supported Languages API](https://apis.io/collections/systran/open-systran-supported-languages-api/)
+- [SYSTRAN Translate & NLP Corpus Translation API](https://apis.io/collections/systran/open-systran-translation-api/)
 
-Discover which language pairs, model options, formats, and selectors (domains, owners, sizes) are available - `GET /translation/supportedLanguages`, `GET /translation/supportedFeatures`, `GET /translation/supportedFormats`, and `GET /translation/supportedSelectors`.
+#### Security (2)
 
-- **Human URL:** [https://docs.systran.net/translateAPI/translation/](https://docs.systran.net/translateAPI/translation/)
-- **Base URL:** `https://api-translate.systran.net`
+Authentication, trust centre, and vulnerability disclosure.
 
-### SYSTRAN Language Detection API
+- [Systran Authentication](https://apis.io/security/systran/systran-authentication/)
+- [Systran Domain Security](https://apis.io/security/systran/systran-domain-security/)
 
-Automatically identify the language of a piece of text through the SYSTRAN.io / Platform NLP language-identification service (`GET /nlp/lid/detectLanguage`) and list the languages it can recognize (`GET /nlp/lid/supportedLanguages`).
+#### Plans and pricing (1)
 
-- **Human URL:** [https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API](https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API)
-- **Base URL:** `https://api-platform.systran.net`
+Published plans, tiers and prices.
 
-### SYSTRAN NLP API
+- [Systran Plans Pricing](https://apis.io/plans/systran/systran-plans-pricing/)
 
-Natural language processing over the SYSTRAN.io / Platform NLP surface - morphological analysis (`GET /nlp/morphology/extractRoots`), tokenization (`GET /nlp/tokenization/tokenize`), segmentation (`GET /nlp/segmentation/segment`), and named entity recognition (`GET /nlp/ner/extractNamedEntities`).
+#### Rate limits (1)
 
-- **Human URL:** [https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API](https://help.systrangroup.com/hc/en-us/sections/360004529440--REST-API)
-- **Base URL:** `https://api-platform.systran.net`
+Published request limits.
 
-### SYSTRAN Dictionary API
+- [Systran Rate Limits](https://apis.io/rate-limits/systran/systran-rate-limits/)
 
-Look up multilingual dictionary entries and manage user dictionaries and their entries - `GET /resources/dictionary/lookup` plus create, update, delete, list, import, export, and apply operations under `/resources/dictionary`.
+#### FinOps (1)
 
-- **Human URL:** [https://docs.systran.net/translateAPI/dictionary/](https://docs.systran.net/translateAPI/dictionary/)
-- **Base URL:** `https://api-translate.systran.net`
+What the API costs to run, by operation.
 
-### SYSTRAN Profiles API
+- [Systran Finops](https://apis.io/finops/systran/systran-finops/)
 
-Create and manage translation profiles that bundle a language pair with dictionaries, corpora, and model options, and control their permissions - `GET /profiles`, `POST /profiles/create`, activate/deactivate/delete, and `GET/POST /profiles/{id}/permissions`, plus `GET /translationResources`.
+## Where to find this API
 
-- **Human URL:** [https://docs.systran.net/translateAPI/profiles/](https://docs.systran.net/translateAPI/profiles/)
-- **Base URL:** `https://api-translate.systran.net`
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### SYSTRAN Corpus API
-
-Manage translation-memory corpora and their bilingual segments - add, import, list, export, match, update, and delete corpora under `/resources/corpus`, plus segment and segment-target CRUD used to adapt and tune translation output.
-
-- **Human URL:** [https://docs.systran.net/translateAPI/corpus/](https://docs.systran.net/translateAPI/corpus/)
-- **Base URL:** `https://api-translate.systran.net`
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/SYSTRAN)
-- [LinkedIn](https://www.linkedin.com/company/systran)
 - [Website](https://www.systran.net)
 - [Documentation](https://docs.systran.net/translateAPI/en/)
-- [Plans](plans/systran-plans-pricing.yml)
-- [Rate Limits](rate-limits/systran-rate-limits.yml)
-- [Fin Ops](finops/systran-finops.yml)
+- [GitHub](https://github.com/SYSTRAN)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 24.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 42.2 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 29.8 |
+| Access clarity | 7.9 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/systran/](https://apis.io/providers/systran/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for SYSTRAN: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/systran/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
